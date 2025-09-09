@@ -31,7 +31,7 @@ export const casinos: Casino[] = [
     rating: 9.6,
     votes: 3478,
     terms:
-      "18+ | Vilkår og betingelser gælder | Kun for nye kunder | Omsætningskrav 30x | Gyldig i 21 dage | Max bet 100 kr",
+      "18+ | Vilkår og betingelser gælder | Kun for nye kunder | Omsætningskrav 30x | Gyldig i 21 dage ",
   },
   {
     id: "getlucky",
@@ -42,7 +42,7 @@ export const casinos: Casino[] = [
     rating: 9.4,
     votes: 5389,
     terms:
-      "18+ | Spil ansvarligt | Nye spillere | Omsætning 35x | 30 dage | Maksimal indsats 25 kr | Fuld T&C på hjemmeside",
+      "18+ | Spil ansvarligt | Nye spillere | Omsætning 35x | 30 dage | Fuld T&C på hjemmeside",
   },
   {
     id: "expekt",
@@ -53,7 +53,7 @@ export const casinos: Casino[] = [
     rating: 9.2,
     votes: 6421,
     terms:
-      "18+ | Vilkår gælder | Kun nye spillere | Omsætningskrav 40x | Gælder i 7 dage | Max indsats 50 kr | Se fuld T&C",
+      "18+ | Vilkår gælder | Kun nye spillere | Omsætningskrav 40x | Gælder i 7 dage | Se fuld T&C",
   },
 ]
 
