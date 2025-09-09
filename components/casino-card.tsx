@@ -30,9 +30,9 @@ function StarRating({ rating }: { rating: number }) {
 
 export function CasinoCard({ casino, isTopChoice = false, rank }: CasinoCardProps) {
   const getBadgeText = (rank?: number) => {
-    if (rank === 1) return "#1 ANBEFALET"
-    if (rank === 2) return "#2 POPULÆR"
-    if (rank === 3) return "#3 BEDSTE VALG"
+    if (rank === 1) return " ANBEFALET"
+    if (rank === 2) return " POPULÆR"
+    if (rank === 3) return " SPILLERENS VALG"
     return ""
   }
 
