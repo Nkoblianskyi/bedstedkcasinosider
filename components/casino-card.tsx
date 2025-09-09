@@ -9,6 +9,7 @@ import Image from "next/image"
 interface CasinoCardProps {
   casino: Casino
   isTopChoice?: boolean
+  rank?: number
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -27,7 +28,16 @@ function StarRating({ rating }: { rating: number }) {
   return <div className="flex gap-0.5">{stars}</div>
 }
 
-export function CasinoCard({ casino, isTopChoice = false }: CasinoCardProps) {
+export function CasinoCard({ casino, isTopChoice = false, rank }: CasinoCardProps) {
+  const getBadgeText = (rank?: number) => {
+    if (rank === 1) return "#1 ANBEFALET"
+    if (rank === 2) return "#2 POPULÆR"
+    if (rank === 3) return "#3 BEDSTE VALG"
+    return ""
+  }
+
+  const showBadge = rank && rank <= 3
+
   return (
     <Link href={casino.url} target="_blank" rel="noopener noreferrer" className="block">
       <Card
@@ -35,9 +45,9 @@ export function CasinoCard({ casino, isTopChoice = false }: CasinoCardProps) {
           isTopChoice ? "border-accent shadow-lg shadow-accent/20" : "border-red-600 border-2"
         }`}
       >
-        {isTopChoice && (
+        {showBadge && (
           <Badge className="absolute top-0 left-0 bg-yellow-400 text-black font-bold px-3 py-1 rounded-none rounded-br-lg z-10 border-2 border-yellow-300">
-            #1 ANBEFALET
+            {getBadgeText(rank)}
           </Badge>
         )}
 
@@ -50,14 +60,14 @@ export function CasinoCard({ casino, isTopChoice = false }: CasinoCardProps) {
                   height={160}
                   src={casino.logo || "/placeholder.svg"}
                   alt={`${casino.name} logo`}
-                  className="w-48 h-28 md:w-42 md:h-36 object-contain p-2"
+                  className="w-36 h-28 md:w-42 md:h-36 object-contain"
                 />
               </div>
 
               <div className="flex flex-col items-center gap-2 md:hidden">
                 <div className="text-center">
                   <p className="text-xs text-muted-foreground">Velkomstbonus</p>
-                  <p className="text-lg font-semibold text-accent">{casino.bonus}</p>
+                  <p className="text-sm font-semibold text-accent">{casino.bonus}</p>
                 </div>
                 <Button className="bg-accent hover:bg-accent/90 text-black font-bold px-3 py-1 text-sm">
                   Spil Nu <ExternalLink className="ml-1 h-3 w-3" />
@@ -67,7 +77,7 @@ export function CasinoCard({ casino, isTopChoice = false }: CasinoCardProps) {
 
             <div className="hidden md:flex md:flex-1 md:flex-col md:items-center md:text-center">
               <p className="text-sm text-muted-foreground mb-1">Velkomstbonus</p>
-              <p className="text-3xl sm:text-3xl font-semibold text-accent">{casino.bonus}</p>
+              <p className="text-3xl font-semibold text-accent">{casino.bonus}</p>
             </div>
 
             <div className="hidden md:flex md:items-center md:gap-4">

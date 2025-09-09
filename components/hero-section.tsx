@@ -1,4 +1,4 @@
-import { Shield, Award, Clock } from "lucide-react"
+import { Award, Zap, Gift } from "lucide-react"
 
 export function HeroSection() {
   const currentDate = new Date()
@@ -32,16 +32,16 @@ export function HeroSection() {
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-8">
           <div className="flex items-center gap-2 text-accent">
-            <Shield className="h-4 w-4 md:h-5 md:w-5" />
-            <span className="text-xs md:text-sm font-medium">SSL Sikkerhed</span>
+            <Zap className="h-4 w-4 md:h-5 md:w-5" />
+            <span className="text-xs md:text-sm font-medium">Hurtige Udbetalinger</span>
           </div>
           <div className="flex items-center gap-2 text-accent">
             <Award className="h-4 w-4 md:h-5 md:w-5" />
             <span className="text-xs md:text-sm font-medium">Spillemyndigheden</span>
           </div>
           <div className="flex items-center gap-2 text-accent">
-            <Clock className="h-4 w-4 md:h-5 md:w-5" />
-            <span className="text-xs md:text-sm font-medium">18+ Ansvarligt Spil</span>
+            <Gift className="h-4 w-4 md:h-5 md:w-5" />
+            <span className="text-xs md:text-sm font-medium">Eksklusive Tilbud</span>
           </div>
         </div>
 
